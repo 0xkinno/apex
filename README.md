@@ -15,7 +15,7 @@
 
 | Resource | Link |
 |---|---|
-| **Live Dashboard** | https://apex-skill.vercel.app |
+| **Live Dashboard** | https://apex-two-lake.vercel.app/ |
 | **Attestation Contract** | BSC Testnet — 0x2518853d8a6799734ded70857F0cFFC26a175C14 |
 | **Commit tx** | BSC Testnet — 0xfc0e80c23af332cef71b19180045a557594cc13edf5094ba8fa57bdad8a5a619 |
 | **GitHub** | https://github.com/0xkinno/apex |
