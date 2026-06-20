@@ -20,6 +20,7 @@
 | **Commit tx** | BSC Testnet — 0xfc0e80c23af332cef71b19180045a557594cc13edf5094ba8fa57bdad8a5a619 |
 | **GitHub** | https://github.com/0xkinno/apex |
 | **Network** | BSC Testnet (Chain ID 97) |
+| **Video Demo** | https://youtu.be/PPXvksyI7lA?si=WZqZSrqFYSlRRh-W |
 | **DoraHacks** | https://dorahacks.io |
 
 ---
