@@ -342,8 +342,8 @@ Explorer:     https://testnet.bscscan.com
 
 | Contract | Network | Address | Explorer |
 |---|---|---|---|
-| ApexAttestation | BSC Testnet | `[paste after deploy]` | [View](https://testnet.bscscan.com) |
-| ERC-8004 Identity | BSC Testnet | `[after registration]` | [View](https://testnet.bscscan.com) |
+| ApexAttestation | BSC Testnet | `[0x2518853d8a6799734ded70857F0cFFC26a175C14]` | [View](https://testnet.bscscan.com) |
+| Commit tx | BSC Testnet | `[0xfc0e80c23af332cef71b19180045a557594cc13edf5094ba8fa57bdad8a5a619]` | [View](https://testnet.bscscan.com) |
 
 ---
 
