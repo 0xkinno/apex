@@ -16,9 +16,9 @@
 | Resource | Link |
 |---|---|
 | **Live Dashboard** | https://apex-skill.vercel.app |
-| **Attestation Contract** | BSC Testnet — see Deployed Contracts below |
-| **Agent Identity** | BSC Testnet — ERC-8004 via BNB Agent SDK |
-| **GitHub** | https://github.com/your-handle/apex-skill |
+| **Attestation Contract** | BSC Testnet — 0x2518853d8a6799734ded70857F0cFFC26a175C14 |
+| **Commit tx** | BSC Testnet — 0xfc0e80c23af332cef71b19180045a557594cc13edf5094ba8fa57bdad8a5a619 |
+| **GitHub** | https://github.com/0xkinno/apex |
 | **Network** | BSC Testnet (Chain ID 97) |
 | **DoraHacks** | https://dorahacks.io |
 
