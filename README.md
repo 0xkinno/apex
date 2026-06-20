@@ -1,4 +1,4 @@
-# APEX — Adaptive Portfolio EXposure Skill
+# APEX — Adaptive Portfolio Exposure Skill
 
 ![Network](https://img.shields.io/badge/Network-BNB_Chain-00FF88?style=flat-square&labelColor=0A0A0A)
 ![Track](https://img.shields.io/badge/Track-Strategy_Skills-00D4FF?style=flat-square&labelColor=0A0A0A)
