@@ -3,6 +3,8 @@ APEX Skill — Core Strategy Engine
 """
 
 import os, sys, json, time, hashlib, logging, argparse
+from dotenv import load_dotenv
+load_dotenv()
 from dataclasses import dataclass, asdict
 from typing import Optional
 from cmc_client import CMCDataLayer
@@ -212,6 +214,37 @@ class APEXSkill:
         with open(LEDGER_PATH, "a") as f:
             f.write(json.dumps(entry, sort_keys=True) + "\n")
 
+        # Write to BSC Testnet
+        try:
+            from dotenv import load_dotenv
+            load_dotenv()
+            from attestation import ApexAttestationClient
+            attester = ApexAttestationClient()
+            if attester.ready:
+                hash_bytes = bytes.fromhex(entry["commit_hash"].replace("0x",""))
+                conf_bps = int(entry["confidence"] * 10000)
+                kelly_bps = int(entry["kelly_fraction"] * 10000)
+                tx = attester.contract.functions.commitSignal(
+                    hash_bytes,
+                    entry["direction"],
+                    entry["regime"],
+                    conf_bps,
+                    kelly_bps
+                ).build_transaction({
+                    "from": attester.account.address,
+                    "nonce": attester.w3.eth.get_transaction_count(attester.account.address),
+                    "gas": 200000,
+                    "gasPrice": attester.w3.to_wei("5","gwei"),
+                    "chainId": 97,
+                })
+                signed = attester.account.sign_transaction(tx)
+                tx_hash = attester.w3.eth.send_raw_transaction(signed.raw_transaction)
+                receipt = attester.w3.eth.wait_for_transaction_receipt(tx_hash, timeout=60)
+                log.info(f"ON-CHAIN COMMIT: {tx_hash.hex()} block={receipt.blockNumber}")
+            else:
+                log.warning("Attester not ready — skipping on-chain commit")
+        except Exception as e:
+            log.error(f"On-chain commit failed: {e}")
         self._signal_id += 1
 
         log.info(f"Signal #{entry['signal_id']}: {entry['direction_name']} | "
